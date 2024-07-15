@@ -1,0 +1,324 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "a,book,flight,i,to,want": {
+            "intent": "flight.book",
+            "domain": "default"
+          },
+          "a,flight,i,need,ticket": {
+            "intent": "flight.book",
+            "domain": "default"
+          },
+          "do,flight,have,new,to,york,you": {
+            "intent": "flight.search",
+            "domain": "default"
+          },
+          "flight,me,option,show": {
+            "intent": "flight.search",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "flight.book": "default",
+          "flight.search": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "I want to book a flight",
+            "intent": "flight.book"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need a flight ticket",
+            "intent": "flight.book"
+          },
+          {
+            "domain": "default",
+            "utterance": "Do you have flights to New York?",
+            "intent": "flight.search"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me flight options",
+            "intent": "flight.search"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "i": 1,
+              "want": 1,
+              "to": 1,
+              "book": 1,
+              "a": 1,
+              "flight": 1,
+              "need": 1,
+              "ticket": 1,
+              "do": 1,
+              "you": 1,
+              "have": 1,
+              "new": 1,
+              "york": 1,
+              "show": 1,
+              "me": 1,
+              "option": 1
+            },
+            "intents": {
+              "flight.book": 1,
+              "flight.search": 1
+            },
+            "intentFeatures": {
+              "flight.book": {
+                "i": 1,
+                "want": 1,
+                "to": 1,
+                "book": 1,
+                "a": 1,
+                "flight": 1,
+                "need": 1,
+                "ticket": 1
+              },
+              "flight.search": {
+                "do": 1,
+                "you": 1,
+                "have": 1,
+                "flight": 1,
+                "to": 1,
+                "new": 1,
+                "york": 1,
+                "show": 1,
+                "me": 1,
+                "option": 1
+              }
+            },
+            "featuresToIntent": {
+              "i": [
+                "flight.book"
+              ],
+              "want": [
+                "flight.book"
+              ],
+              "to": [
+                "flight.book",
+                "flight.search"
+              ],
+              "book": [
+                "flight.book"
+              ],
+              "a": [
+                "flight.book"
+              ],
+              "flight": [
+                "flight.book",
+                "flight.search"
+              ],
+              "need": [
+                "flight.book"
+              ],
+              "ticket": [
+                "flight.book"
+              ],
+              "do": [
+                "flight.search"
+              ],
+              "you": [
+                "flight.search"
+              ],
+              "have": [
+                "flight.search"
+              ],
+              "new": [
+                "flight.search"
+              ],
+              "york": [
+                "flight.search"
+              ],
+              "show": [
+                "flight.search"
+              ],
+              "me": [
+                "flight.search"
+              ],
+              "option": [
+                "flight.search"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "i",
+                "want",
+                "to",
+                "book",
+                "a",
+                "flight",
+                "need",
+                "ticket",
+                "do",
+                "you",
+                "have",
+                "new",
+                "york",
+                "show",
+                "me",
+                "option"
+              ],
+              "intents": [
+                "flight.book",
+                "flight.search"
+              ],
+              "perceptrons": [
+                [
+                  3.733574151992798,
+                  1.6616066694259644,
+                  0.7407402396202087,
+                  1.6616066694259644,
+                  3.733574151992798,
+                  1.8195809125900269,
+                  2.066570520401001,
+                  2.066570520401001,
+                  -0.8010696172714233,
+                  -0.8010696172714233,
+                  -0.8010696172714233,
+                  -0.8010696172714233,
+                  -0.8010696172714233,
+                  -0.930016279220581,
+                  -0.930016279220581,
+                  -0.930016279220581,
+                  0.9076356886530056
+                ],
+                [
+                  -1.8373631238937378,
+                  -1.0603365898132324,
+                  0.6393679976463318,
+                  -1.0603365898132324,
+                  -1.8373631238937378,
+                  3.1233420372009277,
+                  -0.6365740299224854,
+                  -0.6365740299224854,
+                  1.798651933670044,
+                  1.798651933670044,
+                  1.798651933670044,
+                  1.798651933670044,
+                  1.798651933670044,
+                  3.2253284454345703,
+                  3.2253284454345703,
+                  3.2253284454345703,
+                  1.5572992016366747
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "I want to book a flight"
+      ],
+      [
+        "en",
+        "I need a flight ticket"
+      ],
+      [
+        "en",
+        "Do you have flights to New York?"
+      ],
+      [
+        "en",
+        "Show me flight options"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "flight.book": [
+          {
+            "answer": "Sure, I can help you book a flight."
+          }
+        ],
+        "flight.search": [
+          {
+            "answer": "Here are some flight options for you."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
